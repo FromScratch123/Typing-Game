@@ -55,8 +55,12 @@
     alert(`${score} letters, ${miss} misses, ${accuracy.toFixed(2)}% accuracy!`);
   }
 
-  window.addEventListener('click', () => {
+  window.addEventListener('keydown', (e) => {
     if (isPlaying === true) {
+      return;
+    }
+    const Keycode = e.keyCode;
+    if (Keycode !==32) {
       return;
     }
     isPlaying = true;
